@@ -1,5 +1,3 @@
-# Powerline Colorscheme - ANSI
-
 # Powerline setup on .bashrc
 
 ```
