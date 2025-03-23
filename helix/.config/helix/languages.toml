@@ -1,6 +1,7 @@
 [[language]]
 name = "rust"
 auto-format = true
+formatter = ["rustfmt"]
 
 roots = [
   "Cargo.toml",
@@ -29,16 +30,17 @@ inlayHints.typeHints.hideClosureInitialization = false
 name = "c"
 scope = "source.c"
 injection-regex = "c"
+auto-format = true
+formatter = ["clang-format"]
 file-types = ["c", "h"]
 roots = []
-comment-token = "//"
 language-servers = ["clangd"]
 indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]
-name = "lldb-vscode"
+name = "lldb-dap"
 transport = "stdio"
-command = "lldb-vscode"
+command = "lldb-dap"
 
 [[language.debugger.templates]]
 name = "binary"
@@ -68,14 +70,15 @@ scope = "source.cpp"
 injection-regex = "cpp"
 file-types = ["cc", "hh", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino"]
 roots = []
-comment-token = "//"
+auto-format = true
+formatter = ["clang-format"]
 language-servers = ["clangd"]
 indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]
-name = "lldb-vscode"
+name = "lldb-dap"
 transport = "stdio"
-command = "lldb-vscode"
+command = "lldb-dap"
 
 [[language.debugger.templates]]
 name = "binary"
@@ -99,3 +102,34 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "cpp"
 source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "e8dcc9d2b404c542fd236ea5f7208f90be8a6e89" }
 
+[[language]]
+name = "zig"
+scope = "source.zig"
+injection-regex = "zig"
+file-types = ["zig"]
+roots = ["build.zig"]
+auto-format = true
+language-servers = ["zls"]  # Changed from `language-server` to `language-servers`
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "zig", args = ["fmt", "--stdin"] }
+
+[[grammar]]
+name = "zig"
+source = { git = "https://github.com/maxxnino/tree-sitter-zig", rev = "8d3224c3bd0890fe08358886ebf54fca2ed448a6" }
+
+[language-server.zls]
+command = "/usr/bin/zls"
+config.zig_exe_path = "/usr/bin/zls"
+
+[[language]]
+name = "go"
+roots = ["go.work", "go.mod"]
+auto-format = true
+formatter = ["gofmt"]
+language-servers = [ "gopls", "golangci-lint-lsp" ]
+
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
