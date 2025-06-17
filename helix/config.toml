@@ -1,0 +1,68 @@
+theme = "base16_transparent"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-completion=true
+color-modes=true
+cursorline=false
+auto-save=true
+auto-format=true
+text-width=80
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+soft-wrap.enable = true
+soft-wrap.max-indent-retain=80
+true-color = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-modification-indicator", "read-only-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "register", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "LOCKED"
+mode.insert = "WORKING"
+mode.select = "VISUAL SEL"
+
+[editor.lsp]
+enable=true
+auto-signature-help=true
+display-messages = true
+
+[editor.indent-guides]
+render = true
+character = "┊"
+skip-levels = 1
+
+[keys.normal]
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+C-r = ":config-reload"
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+G = "goto_file_end"
+"%" = "match_brackets"
+"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+V = ["select_mode", "extend_to_line_bounds"]
+
+i = ["insert_mode", "collapse_selection"]
+a = ["append_mode", "collapse_selection"]
+
+j = "move_line_down"
+k = "move_line_up"
+
+w = ["move_next_word_start", "move_char_right", "collapse_selection"]
+W = ["move_next_long_word_start", "move_char_right", "collapse_selection"]
+b = ["move_prev_word_start", "collapse_selection"]
+B = ["move_prev_long_word_start", "collapse_selection"]
+
+x = "delete_selection"
+
+[keys.normal.d]
+d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]

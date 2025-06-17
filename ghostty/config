@@ -1,0 +1,16 @@
+font-size = 14
+# font-family = FiraCode Nerd Font
+theme = rose-pine 
+#catppuccin-mocha
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
+background-opacity = 0.98
+
+window-width=107
+window-height=27
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+window-colorspace = "display-p3"
+gtk-titlebar = false
