@@ -51,8 +51,6 @@ def draw_tab(
     global active_tab_num_windows
 
     try:
-        # active_tab_idx = get_boss().active_tab_manager.active_tab_idx
-        # curr_tab_id = tab.tab_id
         output = get_boss().call_remote_control(
             None, ("get-colors", f"--match=recent:0")
         )
@@ -109,13 +107,6 @@ def draw_tab_with_separator(
 
     if tab.is_active:
         screen.cursor.fg = truepink
-        # screen.cursor.fg = as_rgb(draw_data.active_fg.rgb)
-
-    # screen.cursor.bg = background
-    # screen.cursor.fg = as_rgb(draw_data.active_bg.rgb)
-    # screen.draw("")
-    # screen.cursor.bg = as_rgb(draw_data.active_bg.rgb)
-    # screen.cursor.fg = as_rgb(draw_data.active_fg.rgb)
     else:
         screen.cursor.bg = as_rgb(draw_data.inactive_bg.rgb)
         screen.cursor.fg = as_rgb(draw_data.inactive_fg.rgb)
@@ -124,11 +115,6 @@ def draw_tab_with_separator(
 
     if tab.is_active:
         screen.cursor.fg = truepink
-        # screen.cursor.bg = background
-        # screen.cursor.fg = as_rgb(draw_data.active_bg.rgb)
-        # screen.draw("")
-        # screen.cursor.bg = background
-        # screen.cursor.fg = as_rgb(draw_data.active_fg.rgb)
     else:
         screen.cursor.bg = background
         screen.cursor.fg = as_rgb(draw_data.inactive_fg.rgb)
@@ -156,41 +142,6 @@ def truncate_str(input_str, max_length):
         return input_str[:half] + "…" + input_str[-half:]
     else:
         return input_str
-
-
-# def get_cwd():
-#     cwd = ""
-#     tab_manager = get_boss().active_tab_manager
-#     if tab_manager is not None:
-#         window = tab_manager.active_window
-#         if window is not None:
-#             cwd = window.cwd_of_child
-#
-#     cwd_parts = list(Path(cwd).parts)
-#
-#     if len(cwd_parts) > 1:
-#         if (
-#             cwd_parts[1] == "home"
-#             or str(Path(*cwd_parts[:3])) == os.getenv("HOME")
-#             and len(cwd_parts) > 3
-#         ):
-#             # replace /home/{{username}}
-#             cwd_parts = ["~"] + cwd_parts[3:]
-#             if len(cwd_parts) > 1:
-#                 cwd_parts[0] = "~/"
-#         else:
-#             cwd_parts[0] = "/"
-#     else:
-#         cwd_parts[0] = "/"
-#
-#     max_length = 10
-#     cwd = cwd_parts[0] + "/".join(
-#         [
-#             s if len(s) <= max_length else truncate_str(s, max_length)
-#             for s in cwd_parts[1:]
-#         ]
-#     )
-#     return cwd
 
 
 def get_cwd_icon():
