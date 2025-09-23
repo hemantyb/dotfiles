@@ -179,7 +179,7 @@ def get_cwd_icon():
 
     # ➤➤➤ Add folder icon at the beginning
     FOLDER_ICON = "  "  # Folder icon + space
-    # set -g @rose_pine_folder_icon ''
+    # 
     # 
     return FOLDER_ICON + cwd
 
