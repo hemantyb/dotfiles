@@ -1,0 +1,63 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
+  "workbench.tips.enabled": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": "multiple",
+  "editor.lineNumbers": "relative",
+  "workbench.sideBar.location": "right",
+  "keyboard.dispatch": "keyCode",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.lineHeight": 2.0,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnPaste": true,
+  // "editor.formatOnSaveMode": "file",
+  "[edge]": {
+    "editor.defaultFormatter": "adonisjs.vscode-edge"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.wordWrap": "on",
+  "editor.mouseWheelZoom": true,
+  "vsicons.presets.hideExplorerArrows": true,
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 8,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "window.commandCenter": false,
+  "chat.commandCenter.enabled": false,
+  "window.menuBarVisibility": "compact",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "svelte.enable-ts-plugin": true,
+  "extensions.ignoreRecommendations": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "javascript": false
+  },
+  "workbench.colorTheme": "One Dark Pro Night Flat"
+}
