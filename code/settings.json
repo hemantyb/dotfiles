@@ -14,23 +14,6 @@
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.lineHeight": 2.0,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-  "editor.formatOnPaste": true,
-  // "editor.formatOnSaveMode": "file",
-  "[edge]": {
-    "editor.defaultFormatter": "adonisjs.vscode-edge"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "workbench.iconTheme": "material-icon-theme",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "editor.overviewRulerBorder": false,
@@ -48,16 +31,5 @@
   "chat.commandCenter.enabled": false,
   "window.menuBarVisibility": "compact",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editor.editorActionsLocation": "hidden",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "svelte.enable-ts-plugin": true,
-  "extensions.ignoreRecommendations": true,
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "javascript": false
-  },
-  "workbench.colorTheme": "One Dark Pro Night Flat"
+  "workbench.editor.editorActionsLocation": "hidden"
 }

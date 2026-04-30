@@ -1,16 +1,13 @@
 font-size = 14
-# font-family = FiraCode Nerd Font
-theme = rose-pine 
-#catppuccin-mocha
+theme = Atom
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
-background-opacity = 0.98
+background-opacity = 0.9
 
-window-width=107
-window-height=27
+window-width=120
+window-height=30
 
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
 
 window-colorspace = "display-p3"
-gtk-titlebar = false

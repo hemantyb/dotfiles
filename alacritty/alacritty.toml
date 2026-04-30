@@ -30,9 +30,7 @@ style = "Italic"
 style = "Block"
 
 [window]
-# dynamic_padding = true
 opacity = 0.7
-decorations = "None"
 
 [window.dimensions]
 columns = 120
