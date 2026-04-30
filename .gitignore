@@ -1,2 +1,4 @@
-yazi/plugins
+yazi/plugins/
 yazi/package.toml
+
+wezterm/.stylua.toml
