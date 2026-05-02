@@ -1,0 +1,122 @@
+{
+	"layer": "top",
+	"position": "left",
+	"mod": "dock",
+	"exclusive": true,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"swap-icon-label": false,
+	"modules-left": [
+		"niri/workspaces",
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"network",
+		"battery",
+		"backlight",
+		"pulseaudio"
+	],
+	"niri/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"default": " ",
+			"active": " "
+		}
+	},
+	"clock": {
+		"timezone": "Asia/Kolkata",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%d\n%m\n-\n%I\n%M\n}",
+    "justify": "center",
+		"interval": 1
+	},
+	"cpu": {
+		"interval": 1,
+		"format": "   \n{usage:>2}%\n{icon0}{icon1}{icon2}{icon3}",
+    "justify": "center",
+		"format-icons": [
+			"▁",
+			"▂",
+			"▃",
+			"▄",
+			"▅",
+			"▆",
+			"▇",
+			"█"
+		]
+	},
+	"memory": {
+		"interval": 30,
+		"format": "  \n{used:0.1f}G\n{total:0.1f}G",
+    "justify": "center",
+	},
+	"network": {
+		"format-wifi": " ",
+		// "format-wifi": "  \n{bandwidthDownBits}",
+		"format-ethernet": "󰈀 ",
+		// "format-ethernet": "󰈀  \n{bandwidthDownBits}",
+    "justify": "center",
+		"interval": 5,
+		"tooltip": false,
+		"tooltip-format": "{essid} - {ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "⚠",
+		// "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 40,
+			"critical": 30
+		},
+		"format": "{icon}\n{capacity}",
+		"format-charging": " \n{capacity}",
+		"format-plugged": " \n{capacity}",
+		"format-alt": "{time}\n{icon}",
+    "justify": "center",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		]
+	},
+    "backlight": {
+    "format": "{icon}\n{percent}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "tooltip": false,
+    "justify": "center",
+    "reverse-scrolling": true,
+		"on-scroll-up": "brightnessctl -q set 1%+",
+		"on-scroll-down": "brightnessctl -q set 1%-"
+    },
+	"pulseaudio": {
+		"format": "{icon}\n{volume}",
+		"tooltip": false,
+    "justify": "center",
+		"format-muted": " Muted",
+		"on-click": "pamixer -t",
+		"on-scroll-up": "pamixer -i 5",
+		"on-scroll-down": "pamixer -d 5",
+		"scroll-step": 100,
+		"format-icons": {
+			"headphone": " ",
+			"hands-free": " ",
+			"headset": " ",
+			"default": [
+				"",
+				"",
+				""
+			]
+		}
+	}
+}
