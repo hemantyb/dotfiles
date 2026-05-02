@@ -1,0 +1,121 @@
+{
+	"layer": "top",
+	"position": "top",
+	"mod": "dock",
+	"exclusive": true,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"swap-icon-label": false,
+	"modules-left": [
+		"niri/workspaces"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"network",
+		"battery",
+		"backlight",
+		"pulseaudio"
+	],
+	"niri/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"default": " ",
+			"active": " "
+		}
+	},
+	"clock": {
+		"timezone": "Asia/Kolkata",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%d/%m - %I:%M %p}",
+		"interval": 1
+	},
+	"cpu": {
+		"interval": 1,
+		"format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+		"format-icons": [
+			"▁",
+			"▂",
+			"▃",
+			"▄",
+			"▅",
+			"▆",
+			"▇",
+			"█"
+		]
+	},
+	"memory": {
+		"interval": 30,
+		"format": "  {used:0.1f}G/{total:0.1f}G"
+	},
+	"network": {
+		"format-wifi": "  {bandwidthDownBits}",
+		"format-ethernet": "󰈀  {bandwidthDownBits}",
+		"interval": 5,
+		"tooltip": false,
+		"tooltip-format": "{essid} - {ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "Disconnected ⚠",
+		"format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 40,
+			"critical": 30
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		]
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"󰃞",
+			"󰃟",
+			"󰃠"
+		],
+		"on-scroll-up": "brightnessctl -q set 1%+",
+		"on-scroll-down": "brightnessctl -q set 1%-"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"tooltip": false,
+		"format-muted": " Muted",
+		"on-click": "pamixer -t",
+		"on-scroll-up": "pamixer -i 5",
+		"on-scroll-down": "pamixer -d 5",
+		"scroll-step": 100,
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		}
+	}
+}
